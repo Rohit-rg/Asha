@@ -18,4 +18,10 @@ public class BookService implements IBookService {
         return bookdao.findAll();
 
     }
+
+    @Override
+    public String saveBook(Book book) {
+        bookdao.save(book);
+        return String.format("Book saved successfully... %s", book.toString());
+    }
 }
